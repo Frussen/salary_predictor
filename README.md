@@ -16,7 +16,7 @@
 
 <img width="861" alt="image" src="https://github.com/Frussen/salary_predictor/assets/99719304/594cf16f-6111-48b7-b75d-db9213bae601">
 
-Dataset Source: https://www.kaggle.com/datasets/inductiveanks/employee-salaries-for-different-job-roles
+Dataset Source: https://www.kaggle.com/code/aakashjoshi123/data-science-salaries/input?scriptVersionId=136464460
 
 <br/>
 <br/>
