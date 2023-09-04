@@ -9,7 +9,7 @@
 <br/>
 
 
-<!-- Overview -->hjjkllp
+<!-- Overview -->
 <img width="783" alt="image" src="https://github.com/Frussen/salary_predictor/assets/99719304/169e87c9-38ae-46d3-88c8-84e0d217f9dc">
 
 <img width="849" alt="image" src="https://github.com/Frussen/salary_predictor/assets/99719304/4d9fb504-9b6a-453d-9872-f434e4254883">
