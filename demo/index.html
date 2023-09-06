@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Predictor</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icons/goal.ico?v=1.0" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Salary Predictor</h1>
+  </div>
+
+  <div class="wrapper">
+    <div id="container">
+
+      <div class="flex-item">
+        <label for="job_title">Choose Job Title:</label>
+        <select name="job_title" id="job_title">
+          <option value="void" selected="selected"></option>
+          <option value="de">Data Engineer</option>
+          <option value="ds">Data Scientist</option>
+          <option value="da">Data Analyst</option>
+          <option value="ml">Machine Learning Engineer</option>
+          <option value="ae">Analytics Engineer</option>
+          <option value="rc">Research Scientist</option>
+          <option value="dt">Data Architect</option>
+        </select>
+
+        <label for="experience"> Experience Level:</label>
+        <select name="experience" id="experience">
+          <option value="void" selected="selected"></option>
+          <option value="ent">Entry</option>
+          <option value="mid">Mid</option>
+          <option value="sen">Senior</option>
+          <option value="exe">Executive</option>
+        </select>
+
+        <label for="emp_type"> Employment Type:</label>
+        <select name="emp_type" id="emp_type">
+          <option value="void" selected="selected"></option>
+          <option value="full">Full-Time</option>
+          <option value="part">Part-Time</option>
+          <option value="cont">Contract</option>
+          <option value="free">Freelance</option>
+        </select>
+      </div>
+      
+      <div class="flex-item">
+        <label for="cmp_size"> Company Size:</label>
+        <select name="cmp_size" id="cmp_size">
+          <option value="void" selected="selected"></option>
+          <option value="s">Small</option>
+          <option value="m">Medium</option>
+          <option value="l">Large</option>
+        </select>
+
+        <label for="year"> Year:</label>
+        <select name="year" id="year">
+          <option value="void" selected="selected"></option>
+          <option value="seven">2027</option>
+          <option value="six">2026</option>
+          <option value="five">2025</option>
+          <option value="four">2024</option>
+          <option value="three">2023</option>
+          <option value="two">2022</option>
+          <option value="one">2021</option>
+          <option value="zero">2020</option>
+        </select>
+
+        <button id="predict" onclick="predictSalary()">PREDICT</button>
+      </div>
+    </div>
+
+    <div id="ending">
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script>
+    function predictSalary() {
+
+      var error = ''
+      var year = document.getElementById("year");
+      var experience = document.getElementById("experience");
+      var cmp_size = document.getElementById("cmp_size");
+      var emp_type = document.getElementById("emp_type");
+      var job_title = document.getElementById("job_title");
+      var result = document.getElementById("result")
+
+      year = parseInt(year.options[year.selectedIndex].text)
+      if (isNaN(year)) {error = 'Select a Year'}
+
+      switch (experience.options[experience.selectedIndex].text)
+      {
+        case "Entry":
+          experience = 1;
+          break;
+
+        case "Mid":
+          experience = 2;
+          break;
+
+        case "Senior":
+          experience = 3;
+          break;
+
+        case "Executive":
+          experience = 4;
+          break;
+        
+        default:
+          error = "Select an Experience Level"
+          break;
+      }
+
+      switch (cmp_size.options[cmp_size.selectedIndex].text)
+      {
+        case "Small":
+          cmp_size = 1;
+          break;
+
+        case "Medium":
+          cmp_size = 2;
+          break;
+
+        case "Large":
+          cmp_size = 3;
+          break;
+        
+        default:
+          error = "Select an Company Size"
+          break;
+      }
+
+      emp_type_full = 0;
+      emp_type_part = 0;
+      emp_type_cont = 0;
+      emp_type_free = 0;
+
+      switch (emp_type.options[emp_type.selectedIndex].text)
+      {
+        case "Full-Time":
+          emp_type_full = 1;
+          break;
+
+        case "Part-Time":
+          emp_type_part = 1;
+          break;
+
+        case "Contract":
+          emp_type_cont = 1;
+          break;
+
+        case "Freelance":
+          emp_type_free = 1;
+          break;
+        
+        default:
+          error = "Select an Employment Type"
+          break;
+      }
+
+      job_title_de = 0;
+      job_title_ds = 0;
+      job_title_da = 0;
+      job_title_ml = 0;
+      job_title_ae = 0;
+      job_title_rc = 0;
+      job_title_dt = 0;
+
+      switch (job_title.options[job_title.selectedIndex].text)
+      {
+        case "Data Engineer":
+          job_title_de = 1;
+          break;
+
+        case "Data Scientist":
+          job_title_ds = 1;
+          break;
+
+        case "Data Analyst":
+          job_title_da = 1;
+          break;
+
+        case "Machine Learning Engineer":
+          job_title_ml = 1;
+          break;
+
+        case "Analytics Engineer":
+          job_title_ae = 1;
+          break;
+
+        case "Research Scientist":
+          job_title_rc = 1;
+          break;
+
+        case "Data Architect":
+          job_title_dt = 1;
+          break;
+        
+        default:
+          error = "Select a Job Title"
+          break;
+      }
+
+      values = [
+        year,
+        experience,
+        cmp_size,
+        emp_type_full,
+        emp_type_part,
+        emp_type_cont,
+        emp_type_free,
+        job_title_de,
+        job_title_ds,
+        job_title_da,
+        job_title_ml,
+        job_title_ae,
+        job_title_rc,
+        job_title_dt
+      ]
+
+      const coeff = [
+        1.33618537e+04,
+        2.54615612e+04,
+        8.68572021e+02,
+       -1.82851781e+11,
+       -5.61543109e+10,
+        1.17867674e+12,
+        0.00000000e+00,
+        0.00000000e+00,
+        2.84825300e+15,
+        0.00000000e+00,
+        3.24639581e+15,
+        3.18871270e+15,
+        2.48635055e+15,
+        0.00000000e+00
+      ]
+      
+      var prediction = 0;
+      for(i=0; i<values.length; i++) {
+        prediction += coeff[i] * values[i]
+        console.log(prediction)
+      }
+
+      if(error === '') {
+        result.innerHTML = 'Your Salary Prediction is: ' + Math.round(prediction%1000 * 10) / 10 + "K"
+      } else {
+        result.innerHTML = error
+      }
+      result.classList.remove('show');
+      setInterval(addShow,200)
+    }
+
+    function addShow() {
+      document.getElementById("result").classList.add('show')
+    }
+  </script>
+    
+
+</body>
+</html>
