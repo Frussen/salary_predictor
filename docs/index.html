@@ -26,8 +26,8 @@
       <div class="flex-item">
         <label for="job_title">Choose Job Title:</label>
         <select name="job_title" id="job_title">
-          <option value="void" selected="selected"></option>
-          <option value="de">Data Engineer</option>
+          <option value="void"></option>
+          <option value="de" selected="selected">Data Engineer</option>
           <option value="ds">Data Scientist</option>
           <option value="da">Data Analyst</option>
           <option value="ml">Machine Learning Engineer</option>
@@ -38,17 +38,17 @@
 
         <label for="experience"> Experience Level:</label>
         <select name="experience" id="experience">
-          <option value="void" selected="selected"></option>
+          <option value="void"></option>
           <option value="ent">Entry</option>
           <option value="mid">Mid</option>
-          <option value="sen">Senior</option>
+          <option value="sen" selected="selected">Senior</option>
           <option value="exe">Executive</option>
         </select>
 
         <label for="emp_type"> Employment Type:</label>
         <select name="emp_type" id="emp_type">
-          <option value="void" selected="selected"></option>
-          <option value="full">Full-Time</option>
+          <option value="void"></option>
+          <option value="full" selected="selected">Full-Time</option>
           <option value="part">Part-Time</option>
           <option value="cont">Contract</option>
           <option value="free">Freelance</option>
@@ -58,20 +58,20 @@
       <div class="flex-item">
         <label for="cmp_size"> Company Size:</label>
         <select name="cmp_size" id="cmp_size">
-          <option value="void" selected="selected"></option>
+          <option value="void"></option>
           <option value="s">Small</option>
-          <option value="m">Medium</option>
+          <option value="m" selected="selected">Medium</option>
           <option value="l">Large</option>
         </select>
 
         <label for="year"> Year:</label>
         <select name="year" id="year">
-          <option value="void" selected="selected"></option>
+          <option value="void"></option>
           <option value="seven">2027</option>
           <option value="six">2026</option>
           <option value="five">2025</option>
           <option value="four">2024</option>
-          <option value="three">2023</option>
+          <option value="three" selected="selected">2023</option>
           <option value="two">2022</option>
           <option value="one">2021</option>
           <option value="zero">2020</option>
@@ -217,44 +217,34 @@
         year,
         experience,
         cmp_size,
-        emp_type_full,
-        emp_type_part,
-        emp_type_cont,
-        emp_type_free,
+        job_title_ae,
+        job_title_da,
+        job_title_dt,
         job_title_de,
         job_title_ds,
-        job_title_da,
         job_title_ml,
-        job_title_ae,
-        job_title_rc,
-        job_title_dt
+        job_title_rc
       ]
 
-      const coeff = [
-        1.33618537e+04,
-        2.54615612e+04,
-        8.68572021e+02,
-       -1.82851781e+11,
-       -5.61543109e+10,
-        1.17867674e+12,
-        0.00000000e+00,
-        0.00000000e+00,
-        2.84825300e+15,
-        0.00000000e+00,
-        3.24639581e+15,
-        3.18871270e+15,
-        2.48635055e+15,
-        0.00000000e+00
-      ]
+      const means = [2.02251346e+03, 2.63561077e+00, 2.07298137e+00, 5.69358178e-02,
+       1.85817805e-01, 3.36438923e-02, 2.89855072e-01, 2.60869565e-01,
+       1.28881988e-01, 4.39958592e-02]
+
+      const scales = [0.68352776, 0.68232263, 0.36451677, 0.23171994, 0.38895957,
+       0.18031079, 0.45369495, 0.43910891, 0.33506928, 0.20508589]
+
+      const coeff = [1.03244753e+04, 2.55381505e+04, 9.05065279e+02, 6.38208730e+16,
+       1.07128197e+17, 4.96616390e+16, 1.24957774e+17, 1.20940451e+17,
+       9.22856006e+16, 5.64852587e+16]
       
-      var prediction = 0;
+      var prediction = 140947.92206393884;
       for(i=0; i<values.length; i++) {
-        prediction += coeff[i] * values[i]
-        console.log(prediction)
+        prediction += (coeff[i] * ((values[i]-means[i])/scales[i]))
+        console.log((((values[i]-means[i])/scales[i])))
       }
 
       if(error === '') {
-        result.innerHTML = 'Your Salary Prediction is: ' + Math.round(prediction%1000 * 10) / 10 + "K"
+        result.innerHTML = 'Your Salary Prediction is: ' + Math.round(prediction/100) / 10 + "K"
       } else {
         result.innerHTML = error
       }
