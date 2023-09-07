@@ -471,6 +471,7 @@
       <column caption='Salary Currency1' datatype='string' name='[salary_currency]' role='dimension' type='nominal' />
       <column caption='Salary In Usd' datatype='integer' name='[salary_in_usd]' role='measure' type='quantitative' />
       <column caption='Work Year' datatype='integer' name='[work_year]' role='dimension' type='quantitative' />
+      <column-instance column='[Company Location]' derivation='None' name='[none:Company Location:nk]' pivot='key' type='nominal' />
       <column-instance column='[Company Size]' derivation='None' name='[none:Company Size:nk]' pivot='key' type='nominal' />
       <column-instance column='[Employment Type]' derivation='None' name='[none:Employment Type:nk]' pivot='key' type='nominal' />
       <column-instance column='[Experience Level]' derivation='None' name='[none:Experience Level:nk]' pivot='key' type='nominal' />
@@ -488,13 +489,16 @@
           <groupfilter function='level-members' level='[Job Title]' />
         </groupfilter>
       </group>
-      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/gpras/Documents/My Tableau Repository/Datasources/data_science_salaries.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='false' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/gpras/Documents/My Tableau Repository/Datasources/data_science_salaries.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='09/07/2023 09:33:36 AM' username='tableau_internal_user'>
           <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A' table='[Extract].[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]' type='table' />
           <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
             <relation name='data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A' table='[Extract].[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]' type='table' />
             <relation name='project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E' table='[Extract].[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]' type='table' />
           </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <refresh>
+            <refresh-event add-from-file-path='data_science_salaries' increment-value='%null%' refresh-type='create' rows-inserted='3907' timestamp-start='2023-09-07 09:33:35.056' />
+          </refresh>
           <metadata-records>
             <metadata-record class='column'>
               <remote-name>Job Title</remote-name>
@@ -509,6 +513,7 @@
               <approx-count>98</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Employment Type</remote-name>
@@ -523,6 +528,7 @@
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Experience Level</remote-name>
@@ -537,6 +543,7 @@
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Expertise Level</remote-name>
@@ -551,6 +558,7 @@
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Salary</remote-name>
@@ -564,6 +572,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>813</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Salary Currency</remote-name>
@@ -578,6 +587,7 @@
               <approx-count>21</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Company Location</remote-name>
@@ -592,6 +602,7 @@
               <approx-count>65</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Salary in USD</remote-name>
@@ -605,6 +616,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>990</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Employee Residence</remote-name>
@@ -619,6 +631,7 @@
               <approx-count>70</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Company Size</remote-name>
@@ -633,6 +646,7 @@
               <approx-count>3</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>Year</remote-name>
@@ -646,6 +660,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>F1</remote-name>
@@ -659,6 +674,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>607</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>work_year</remote-name>
@@ -672,6 +688,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>3</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>experience_level</remote-name>
@@ -686,6 +703,7 @@
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>employment_type</remote-name>
@@ -700,6 +718,7 @@
               <approx-count>4</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>job_title</remote-name>
@@ -714,6 +733,7 @@
               <approx-count>50</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>salary</remote-name>
@@ -727,6 +747,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>272</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>salary_currency</remote-name>
@@ -741,6 +762,7 @@
               <approx-count>17</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>salary_in_usd</remote-name>
@@ -754,6 +776,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>369</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>employee_residence</remote-name>
@@ -768,6 +791,7 @@
               <approx-count>57</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>remote_ratio</remote-name>
@@ -781,6 +805,7 @@
               <aggregation>Sum</aggregation>
               <approx-count>3</approx-count>
               <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>company_location</remote-name>
@@ -795,6 +820,7 @@
               <approx-count>50</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>company_size</remote-name>
@@ -809,6 +835,7 @@
               <approx-count>3</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RGB' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -1151,29 +1178,18 @@
               <bucket>&quot;Research Analyst&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:Company Size:nk]' type='palette'>
+          <encoding attr='color' field='[none:Year:ok]' type='palette'>
             <map to='#b07aa1'>
-              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>2020</bucket>
             </map>
             <map to='#e15759'>
-              <bucket>&quot;Small&quot;</bucket>
-            </map>
-            <map to='#ff9da7'>
-              <bucket>&quot;Large&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:Experience Level:nk]' type='palette'>
-            <map to='#b07aa1'>
-              <bucket>&quot;Executive&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;Mid&quot;</bucket>
+              <bucket>2022</bucket>
             </map>
             <map to='#edc948'>
-              <bucket>&quot;Entry&quot;</bucket>
+              <bucket>2023</bucket>
             </map>
             <map to='#ff9da7'>
-              <bucket>&quot;Senior&quot;</bucket>
+              <bucket>2021</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[none:Employment Type:nk]' type='palette'>
@@ -1190,18 +1206,15 @@
               <bucket>&quot;Contract&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:Year:ok]' type='palette'>
+          <encoding attr='color' field='[none:Company Size:nk]' type='palette'>
             <map to='#b07aa1'>
-              <bucket>2020</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
             </map>
             <map to='#e15759'>
-              <bucket>2022</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>2023</bucket>
+              <bucket>&quot;Small&quot;</bucket>
             </map>
             <map to='#ff9da7'>
-              <bucket>2021</bucket>
+              <bucket>&quot;Large&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[none:remote_ratio:ok]' type='palette'>
@@ -1213,6 +1226,52 @@
             </map>
             <map to='#ff9da7'>
               <bucket>0</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Experience Level:nk]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>&quot;Executive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Mid&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Entry&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Senior&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Company Location:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;United States&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Ireland&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;Russian Federation&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;New Zealand&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Saudi Arabia&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Bosnia and Herzegovina&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Israel&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Australia&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Puerto Rico&quot;</bucket>
             </map>
           </encoding>
         </style-rule>
@@ -1282,32 +1341,6 @@
         </relationships>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
-    <datasource inline='true' name='Clipboard_20230907T113948' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='Clipboard_20230907T113948' name='Clipboard_20230907T113948leaf'>
-            <connection class='textscan' directory='C:/Users/gpras/AppData/Local/Temp/TableauTemp/0s5gncs16z0h261ekgte01bcduar' filename='Clipboard_20230907T113948.txt' temporary='yes' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='Clipboard_20230907T113948leaf' name='Clipboard_20230907T113948#txt' table='[Clipboard_20230907T113948#txt]' type='table' />
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='Clipboard_20230907T113948leaf' name='Clipboard_20230907T113948#txt' table='[Clipboard_20230907T113948#txt]' type='table' />
-      </connection>
-      <aliases enabled='yes' />
-      <_.fcp.ObjectModelTableType.true...column caption='Clipboard_20230907T113948' datatype='table' name='[__tableau_internal_object_id__].[Clipboard_20230907T113948]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
-      </semantic-values>
-      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-        <objects>
-          <object caption='Clipboard_20230907T113948' id='Clipboard_20230907T113948'>
-            <properties context=''>
-              <relation connection='Clipboard_20230907T113948leaf' name='Clipboard_20230907T113948#txt' table='[Clipboard_20230907T113948#txt]' type='table' />
-            </properties>
-          </object>
-        </objects>
-      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-    </datasource>
   </datasources>
   <worksheets>
     <worksheet name='Sal Vs Company size'>
@@ -1341,21 +1374,28 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <format attr='title' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='rows' value='' />
-            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='rows' value='false' />
-            <format attr='height' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' value='28' />
+            <format attr='title' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='cols' value='' />
+            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='cols' value='false' />
           </style-rule>
           <style-rule element='cell'>
             <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' value='n#,##0,K;-#,##0,K' />
+            <format attr='cell-w' value='78' />
+            <format attr='cell-h' value='26' />
+            <format attr='cell' value='26' />
+            <format attr='cell-q' value='130' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' value='16' />
           </style-rule>
           <style-rule element='label'>
-            <format attr='text-orientation' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' value='0' />
+            <format attr='text-orientation' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' value='-90' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='size-bar' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
           </style-rule>
           <style-rule element='worksheet'>
             <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
           </style-rule>
         </style>
         <panes>
@@ -1376,8 +1416,8 @@
             </style>
           </pane>
         </panes>
-        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]</rows>
-        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]</cols>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]</rows>
+        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]</cols>
       </table>
       <simple-id uuid='{A5E2A09E-28DE-49E1-A043-015CEC3D7E27}' />
     </worksheet>
@@ -1711,7 +1751,7 @@
             <groupfilter function='level-members' level='[none:Experience Level:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <shelf-sorts>
-            <shelf-sort-v2 dimension-to-sort='[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' shelf='columns' />
+            <shelf-sort-v2 dimension-to-sort='[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' shelf='rows' />
           </shelf-sorts>
           <slices>
             <column>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]</column>
@@ -1720,13 +1760,21 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' scope='rows' value='false' />
+            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' scope='cols' value='false' />
           </style-rule>
           <style-rule element='cell'>
             <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' value='n#,##0,K;-#,##0,K' />
+            <format attr='cell-w' value='210' />
+            <format attr='cell-h' value='70' />
+            <format attr='cell' value='70' />
+            <format attr='cell-q' value='350' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]' value='84' />
           </style-rule>
           <style-rule element='worksheet'>
             <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
           </style-rule>
         </style>
         <panes>
@@ -1747,20 +1795,22 @@
             </style>
           </pane>
         </panes>
-        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]</rows>
-        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]</cols>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]</rows>
+        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]</cols>
       </table>
       <simple-id uuid='{9471497E-4813-40BC-949D-1F61D07C0EC6}' />
     </worksheet>
     <worksheet name='Sheet 7'>
       <table>
         <view>
-          <datasources>
-            <datasource name='Clipboard_20230907T113948' />
-          </datasources>
+          <datasources />
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
@@ -1772,7 +1822,7 @@
         <rows />
         <cols />
       </table>
-      <simple-id uuid='{95AD66EE-81C4-456F-A11D-6B69807F3EB1}' />
+      <simple-id uuid='{C9E29838-AB36-43D6-9E2D-F9A32DB82E58}' />
     </worksheet>
   </worksheets>
   <dashboards>
@@ -1876,8 +1926,8 @@
           </layout-options>
           <size maxheight='1800' minheight='1800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='36' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98140' id='35' param='vert' type-v2='layout-flow' w='98974' x='513' y='930'>
+            <zone h='100000' id='38' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98140' id='37' param='vert' type-v2='layout-flow' w='98974' x='513' y='930'>
                 <zone h='9186' id='14' type-v2='title' w='98974' x='513' y='930'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1956,8 +2006,8 @@
       <simple-id uuid='{9581C9C0-A779-4588-BE82-A187B755EECD}' />
     </dashboard>
   </dashboards>
-  <windows saved-dpi-scale-factor='1.5' source-height='75'>
-    <window class='worksheet' name='Sal Vs Exp'>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' maximized='true' name='Sal Vs Exp'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2129,7 +2179,7 @@
       </cards>
       <simple-id uuid='{28F51D74-DF37-4937-873B-53555FB3B871}' />
     </window>
-    <window class='dashboard' maximized='true' name='Dashboard 1'>
+    <window class='dashboard' name='Dashboard 1'>
       <viewpoints>
         <viewpoint name='Sal Vs Company size'>
           <zoom type='entire-view' />
@@ -2148,7 +2198,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='22' />
+      <active id='24' />
       <simple-id uuid='{4A7BA2AF-D696-4525-8590-A309D51D2C02}' />
     </window>
     <window class='worksheet' name='Sheet 7'>
@@ -2167,12 +2217,15 @@
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='30'>
+          <strip size='2147483647'>
             <card type='title' />
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{5546093A-62B6-4B2E-A213-86EA86C76ACA}' />
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{701D93AA-578E-49AB-8BEC-8FF455B2A535}' />
     </window>
   </windows>
 </workbook>
