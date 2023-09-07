@@ -1,0 +1,1771 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0805.0415                               -->
+<workbook original-version='18.1' source-build='2023.2.1 (20232.23.0805.0415)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980?rev=1.1' id='Book2_16939242609980' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='data_science_salaries' inline='true' name='federated.1catnuv10fksi9164vvyx025sbcj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='data_science_salaries' name='textscan.052sji21l5c2y216ovasv0jgjx3y'>
+            <connection class='textscan' directory='C:/Users/gpras/Documents/GitHub/salary_predictor' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='project salary' name='textscan.14kxvyw0577zet1adv5tm1mxmlt7'>
+            <connection class='textscan' directory='C:/Users/gpras/Desktop' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.052sji21l5c2y216ovasv0jgjx3y' name='data_science_salaries.csv' table='[data_science_salaries#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+            <column datatype='string' name='Job Title' ordinal='0' />
+            <column datatype='string' name='Employment Type' ordinal='1' />
+            <column datatype='string' name='Experience Level' ordinal='2' />
+            <column datatype='string' name='Expertise Level' ordinal='3' />
+            <column datatype='integer' name='Salary' ordinal='4' />
+            <column datatype='string' name='Salary Currency' ordinal='5' />
+            <column datatype='string' name='Company Location' ordinal='6' />
+            <column datatype='integer' name='Salary in USD' ordinal='7' />
+            <column datatype='string' name='Employee Residence' ordinal='8' />
+            <column datatype='string' name='Company Size' ordinal='9' />
+            <column datatype='integer' name='Year' ordinal='10' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.052sji21l5c2y216ovasv0jgjx3y' name='data_science_salaries.csv' table='[data_science_salaries#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='string' name='Job Title' ordinal='0' />
+              <column datatype='string' name='Employment Type' ordinal='1' />
+              <column datatype='string' name='Experience Level' ordinal='2' />
+              <column datatype='string' name='Expertise Level' ordinal='3' />
+              <column datatype='integer' name='Salary' ordinal='4' />
+              <column datatype='string' name='Salary Currency' ordinal='5' />
+              <column datatype='string' name='Company Location' ordinal='6' />
+              <column datatype='integer' name='Salary in USD' ordinal='7' />
+              <column datatype='string' name='Employee Residence' ordinal='8' />
+              <column datatype='string' name='Company Size' ordinal='9' />
+              <column datatype='integer' name='Year' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.14kxvyw0577zet1adv5tm1mxmlt7' name='project salary.csv' table='[project salary#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='integer' name='work_year' ordinal='1' />
+              <column datatype='string' name='experience_level' ordinal='2' />
+              <column datatype='string' name='employment_type' ordinal='3' />
+              <column datatype='string' name='job_title' ordinal='4' />
+              <column datatype='integer' name='salary' ordinal='5' />
+              <column datatype='string' name='salary_currency' ordinal='6' />
+              <column datatype='integer' name='salary_in_usd' ordinal='7' />
+              <column datatype='string' name='employee_residence' ordinal='8' />
+              <column datatype='integer' name='remote_ratio' ordinal='9' />
+              <column datatype='string' name='company_location' ordinal='10' />
+              <column datatype='string' name='company_size' ordinal='11' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₹&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Job Title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Job Title]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Job Title</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employment Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Employment Type]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Employment Type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Experience Level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Experience Level]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Experience Level</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Expertise Level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Expertise Level]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Expertise Level</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Salary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Salary]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Salary</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Salary Currency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Salary Currency]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Salary Currency</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Company Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Company Location]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Company Location</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Salary in USD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Salary in USD]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Salary in USD</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employee Residence</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Employee Residence]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Employee Residence</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Company Size</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Company Size]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Company Size</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[data_science_salaries.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>work_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[work_year]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>work_year</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>experience_level</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[experience_level]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>experience_level</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>employment_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[employment_type]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>employment_type</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>job_title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[job_title]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>job_title</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>salary</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[salary]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>salary</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>salary_currency</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[salary_currency]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>salary_currency</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>salary_in_usd</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[salary_in_usd]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>salary_in_usd</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>employee_residence</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[employee_residence]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>employee_residence</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>remote_ratio</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[remote_ratio]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>remote_ratio</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>company_location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[company_location]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>company_location</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>company_size</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[company_size]</local-name>
+            <parent-name>[project salary.csv]</parent-name>
+            <remote-alias>company_size</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Index' datatype='integer' name='[Calculation_2112188291528364032]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INDEX()'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column datatype='string' name='[Company Location]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column datatype='string' name='[Company Size]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Employment Type]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Experience Level]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Job Title]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='data_science_salaries.csv' datatype='table' name='[__tableau_internal_object_id__].[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='project salary.csv' datatype='table' name='[__tableau_internal_object_id__].[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]' role='measure' type='quantitative' />
+      <column caption='Company Location1' datatype='string' name='[company_location]' role='dimension' type='nominal' />
+      <column caption='Company Size1' datatype='string' name='[company_size]' role='dimension' type='nominal' />
+      <column caption='Employee Residence1' datatype='string' name='[employee_residence]' role='dimension' type='nominal' />
+      <column caption='Employment Type1' datatype='string' name='[employment_type]' role='dimension' type='nominal' />
+      <column caption='Experience Level1' datatype='string' name='[experience_level]' role='dimension' type='nominal' />
+      <column caption='Job Title1' datatype='string' name='[job_title]' role='dimension' type='nominal' />
+      <column caption='Remote Ratio' datatype='integer' name='[remote_ratio]' role='measure' type='quantitative' />
+      <column caption='Salary1' datatype='integer' name='[salary]' role='measure' type='quantitative' />
+      <column caption='Salary Currency1' datatype='string' name='[salary_currency]' role='dimension' type='nominal' />
+      <column caption='Salary In Usd' datatype='integer' name='[salary_in_usd]' role='measure' type='quantitative' />
+      <column caption='Work Year' datatype='integer' name='[work_year]' role='dimension' type='quantitative' />
+      <column-instance column='[Company Size]' derivation='None' name='[none:Company Size:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Employment Type]' derivation='None' name='[none:Employment Type:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Experience Level]' derivation='None' name='[none:Experience Level:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Job Title]' derivation='None' name='[none:Job Title:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[remote_ratio]' derivation='None' name='[none:remote_ratio:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (Company Size)' hidden='true' name='[Action (Company Size)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Company Size]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Experience Level,Job Title)' hidden='true' name='[Action (Experience Level,Job Title)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Experience Level]' />
+          <groupfilter function='level-members' level='[Job Title]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Job Title:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Applied Machine Learning Scientist&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Computer Vision Engineer&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Data Operations Analyst&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Director of Data Science&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Machine Learning Software Engineer&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Staff Data Analyst&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;AI Architect&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Business Intelligence Analyst&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Data Engineer 2&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Data Scientist Lead&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Lead Machine Learning Engineer&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Principal Data Scientist&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Analytics Engineer&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Cloud Data Architect&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Data Management Specialist&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Data Visualization Specialist&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Machine Learning Manager&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Research Engineer&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Azure Data Engineer&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Data Analytics Consultant&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Data Quality Analyst&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Financial Data Analyst&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Marketing Data Analyst&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Applied Scientist&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Computer Vision Software Engineer&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Data Operations Engineer&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;ETL Developer&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Machine Learning Specialist&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Staff Data Scientist&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Analytics Engineering Manager&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Cloud Data Engineer&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Data Manager&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Decision Scientist&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Machine Learning Research Engineer&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Research Scientist&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Big Data Engineer&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Data DevOps Engineer&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Data Science Tech Lead&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Lead Data Engineer&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Principal Data Architect&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;AI Developer&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Business Intelligence Data Analyst&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Data Infrastructure Engineer&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Data Specialist&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Machine Learning Developer&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Principal Machine Learning Engineer&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;BI Developer&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Data Analytics Specialist&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Data Science Lead&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Insight Analyst&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;NLP Engineer&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Applied Data Scientist&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Cloud Database Engineer&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Data Modeler&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Deep Learning Engineer&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Machine Learning Researcher&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Sales Data Analyst&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;BI Analyst&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Data Analytics Engineer&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Data Quality Engineer&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Head of Data&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Marketing Data Engineer&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;BI Data Analyst&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Data Analytics Lead&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Data Science Consultant&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Head of Data Science&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;ML Engineer&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Big Data Architect&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Data Architect&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Data Science Manager&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Lead Data Analyst&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Principal Data Analyst&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Business Data Analyst&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Data Engineer&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Data Scientist&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Lead Data Scientist&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Principal Data Engineer&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Autonomous Vehicle Technician&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Consultant Data Engineer&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Data Operations Manager&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;ETL Engineer&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Manager Data Management&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Staff Machine Learning Engineer&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Applied Machine Learning Engineer&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Compliance Data Analyst&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Data Modeller&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Deep Learning Researcher&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Machine Learning Scientist&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Software Data Engineer&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;AI Programmer&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Business Intelligence Developer&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Data Integration Specialist&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Data Strategist&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Machine Learning Engineer&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Product Data Analyst&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;BI Data Engineer&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Data Analytics Manager&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Data Science Engineer&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Head of Machine Learning&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;MLOps Engineer&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;AWS Data Architect&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Data Analyst&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Data Operations Specialist&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Finance Data Analyst&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Managing Director Data Science&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;AI Scientist&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Business Intelligence Engineer&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Data Lead&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Data Visualization Analyst&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Machine Learning Infrastructure Engineer&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Research Analyst&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Company Size:nk]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>&quot;Medium&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Small&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Large&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Experience Level:nk]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>&quot;Executive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Mid&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Entry&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Senior&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Employment Type:nk]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>&quot;Full-Time&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Freelance&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Part-Time&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Contract&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Year:ok]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>2020</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>2022</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>2023</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>2021</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:remote_ratio:ok]' type='palette'>
+            <map to='#b07aa1'>
+              <bucket>100</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>50</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>0</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Argentina&quot;' />
+        <semantic-value key='[County].[Name]' value='%null%' />
+        <semantic-value key='[State].[Name]' value='%null%' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='data_science_salaries.csv' id='data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A'>
+            <properties context=''>
+              <relation connection='textscan.052sji21l5c2y216ovasv0jgjx3y' name='data_science_salaries.csv' table='[data_science_salaries#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='string' name='Job Title' ordinal='0' />
+                  <column datatype='string' name='Employment Type' ordinal='1' />
+                  <column datatype='string' name='Experience Level' ordinal='2' />
+                  <column datatype='string' name='Expertise Level' ordinal='3' />
+                  <column datatype='integer' name='Salary' ordinal='4' />
+                  <column datatype='string' name='Salary Currency' ordinal='5' />
+                  <column datatype='string' name='Company Location' ordinal='6' />
+                  <column datatype='integer' name='Salary in USD' ordinal='7' />
+                  <column datatype='string' name='Employee Residence' ordinal='8' />
+                  <column datatype='string' name='Company Size' ordinal='9' />
+                  <column datatype='integer' name='Year' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A' table='[Extract].[data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A]' type='table' />
+            </properties>
+          </object>
+          <object caption='project salary.csv' id='project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E'>
+            <properties context=''>
+              <relation connection='textscan.14kxvyw0577zet1adv5tm1mxmlt7' name='project salary.csv' table='[project salary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IN' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='work_year' ordinal='1' />
+                  <column datatype='string' name='experience_level' ordinal='2' />
+                  <column datatype='string' name='employment_type' ordinal='3' />
+                  <column datatype='string' name='job_title' ordinal='4' />
+                  <column datatype='integer' name='salary' ordinal='5' />
+                  <column datatype='string' name='salary_currency' ordinal='6' />
+                  <column datatype='integer' name='salary_in_usd' ordinal='7' />
+                  <column datatype='string' name='employee_residence' ordinal='8' />
+                  <column datatype='integer' name='remote_ratio' ordinal='9' />
+                  <column datatype='string' name='company_location' ordinal='10' />
+                  <column datatype='string' name='company_size' ordinal='11' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E' table='[Extract].[project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[Salary]' />
+              <expression op='[salary]' />
+            </expression>
+            <first-end-point object-id='data_science_salaries.csv_1C884EB1C88E473A968F3DB4B906847A' />
+            <second-end-point object-id='project salary.csv_FF2A1C23AE074AD2AB02EE07942D2D8E' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sal Vs Company size'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='12'>Salary by Company Size</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980/SalVsCompanysize?rev=' id='85426491' path='/workbooks/Book2_16939242609980' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data_science_salaries' name='federated.1catnuv10fksi9164vvyx025sbcj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1catnuv10fksi9164vvyx025sbcj'>
+            <column datatype='string' name='[Company Size]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Salary in USD]' role='measure' type='quantitative' />
+            <column-instance column='[Salary in USD]' derivation='Avg' name='[avg:Salary in USD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Company Size]' derivation='None' name='[none:Company Size:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;Large&quot;</bucket>
+              <bucket>&quot;Small&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='rows' value='' />
+            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='rows' value='false' />
+            <format attr='height' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' value='28' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' value='n#,##0,K;-#,##0,K' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' value='0' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' />
+              <text column='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]</rows>
+        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]</cols>
+      </table>
+      <simple-id uuid='{A5E2A09E-28DE-49E1-A043-015CEC3D7E27}' />
+    </worksheet>
+    <worksheet name='Sal Vs Emp type'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='12'>Salary by Employment Type</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980/SalVsEmptype?rev=' id='85426490' path='/workbooks/Book2_16939242609980' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data_science_salaries' name='federated.1catnuv10fksi9164vvyx025sbcj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1catnuv10fksi9164vvyx025sbcj'>
+            <column datatype='string' name='[Employment Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Salary in USD]' role='measure' type='quantitative' />
+            <column-instance column='[Salary in USD]' derivation='Avg' name='[avg:Salary in USD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Employment Type]' derivation='None' name='[none:Employment Type:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' value='n#,##0,K;-#,##0,K' />
+            <format attr='width' value='568' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' />
+              <text column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Employment Type:nk]' />
+              <text column='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' />
+              <color column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Employment Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{40A4303C-46A9-494B-A88E-CF1C1EEB400E}' />
+    </worksheet>
+    <worksheet name='Sal Vs Exp'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='12'>Salary by Experience Level</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980/SalVsExp?rev=' id='85426486' path='/workbooks/Book2_16939242609980' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data_science_salaries' name='federated.1catnuv10fksi9164vvyx025sbcj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1catnuv10fksi9164vvyx025sbcj'>
+            <column datatype='string' name='[Experience Level]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Salary in USD]' role='measure' type='quantitative' />
+            <column-instance column='[Salary in USD]' derivation='Avg' name='[avg:Salary in USD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Experience Level]' derivation='None' name='[none:Experience Level:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' value='28' />
+            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' value='86' />
+            <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' value='n#,##0,K;-#,##0,K' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' value='0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' />
+              <text column='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]</rows>
+        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]</cols>
+      </table>
+      <simple-id uuid='{D10D10BA-9020-4D4F-A24B-F15267BC9C68}' />
+    </worksheet>
+    <worksheet name='Sal comp with years'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='12'>Salary by  Year</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980/Salcompwithyears?rev=' id='85426492' path='/workbooks/Book2_16939242609980' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data_science_salaries' name='federated.1catnuv10fksi9164vvyx025sbcj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1catnuv10fksi9164vvyx025sbcj'>
+            <column datatype='integer' name='[Salary in USD]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+            <column-instance column='[Salary in USD]' derivation='Avg' name='[avg:Salary in USD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year]' derivation='None' name='[none:Year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' value='n#,##0,K;-#,##0,K' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Year:ok]' />
+              <text column='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]</rows>
+        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Year:ok]</cols>
+      </table>
+      <simple-id uuid='{57B87891-D343-4981-8369-002D8AE71397}' />
+    </worksheet>
+    <worksheet name='Sal vs Exp and Title'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='12'>Salary by Experience &amp; Job Title</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980/SalvsExpandTitle?rev=' id='85426488' path='/workbooks/Book2_16939242609980' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data_science_salaries' name='federated.1catnuv10fksi9164vvyx025sbcj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1catnuv10fksi9164vvyx025sbcj'>
+            <column caption='Index' datatype='integer' name='[Calculation_2112188291528364032]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='INDEX()'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column datatype='string' name='[Experience Level]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Job Title]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Salary in USD]' role='measure' type='quantitative' />
+            <column-instance column='[Salary in USD]' derivation='Avg' name='[avg:Salary in USD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Experience Level]' derivation='None' name='[none:Experience Level:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Job Title]' derivation='None' name='[none:Job Title:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2112188291528364032]' derivation='User' name='[usr:Calculation_2112188291528364032:ok:6]' pivot='key' type='ordinal'>
+              <table-calc level-break='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]' ordering-type='Field'>
+                <order field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' />
+                <order field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]' />
+                <sort direction='DESC' using='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]' />
+              </table-calc>
+            </column-instance>
+          </datasource-dependencies>
+          <manual-sort column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Executive&quot;</bucket>
+              <bucket>&quot;Senior&quot;</bucket>
+              <bucket>&quot;Mid&quot;</bucket>
+              <bucket>&quot;Entry&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.1catnuv10fksi9164vvyx025sbcj].[usr:Calculation_2112188291528364032:ok:6]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[usr:Calculation_2112188291528364032:ok:6]' member='1' />
+              <groupfilter function='member' level='[usr:Calculation_2112188291528364032:ok:6]' member='2' />
+              <groupfilter function='member' level='[usr:Calculation_2112188291528364032:ok:6]' member='3' />
+              <groupfilter function='member' level='[usr:Calculation_2112188291528364032:ok:6]' member='4' />
+              <groupfilter function='member' level='[usr:Calculation_2112188291528364032:ok:6]' member='5' />
+              <groupfilter function='member' level='[usr:Calculation_2112188291528364032:ok:6]' member='6' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1catnuv10fksi9164vvyx025sbcj].[usr:Calculation_2112188291528364032:ok:6]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]' value='31' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]' value='33' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.1catnuv10fksi9164vvyx025sbcj].[usr:Calculation_2112188291528364032:ok:6]' value='23' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]' value='-90' />
+            <format attr='display' field='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]' value='true' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='33' />
+                <format attr='maxwidth' value='33' />
+                <format attr='minheight' value='220' />
+                <format attr='maxheight' value='220' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:Salary in USD:qk]</rows>
+        <cols>([federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk] / ([federated.1catnuv10fksi9164vvyx025sbcj].[usr:Calculation_2112188291528364032:ok:6] / [federated.1catnuv10fksi9164vvyx025sbcj].[none:Job Title:nk]))</cols>
+      </table>
+      <simple-id uuid='{7E0DB907-2541-4C54-9DC6-A205B650744F}' />
+    </worksheet>
+    <worksheet name='Sal vs Remote'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='12'>Salary by Remote</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://vizhub/workbooks/Book2_16939242609980/SalvsRemote?rev=' id='85426489' path='/workbooks/Book2_16939242609980' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='data_science_salaries' name='federated.1catnuv10fksi9164vvyx025sbcj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1catnuv10fksi9164vvyx025sbcj'>
+            <column datatype='string' name='[Experience Level]' role='dimension' type='nominal' />
+            <column-instance column='[salary_in_usd]' derivation='Avg' name='[avg:salary_in_usd:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Experience Level]' derivation='None' name='[none:Experience Level:nk]' pivot='key' type='nominal' />
+            <column-instance column='[remote_ratio]' derivation='None' name='[none:remote_ratio:ok]' pivot='key' type='ordinal' />
+            <column caption='Remote Ratio' datatype='integer' name='[remote_ratio]' role='measure' type='quantitative' />
+            <column caption='Salary In Usd' datatype='integer' name='[salary_in_usd]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]'>
+            <groupfilter function='level-members' level='[none:Experience Level:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' value='n#,##0,K;-#,##0,K' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]' />
+              <text column='[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1catnuv10fksi9164vvyx025sbcj].[avg:salary_in_usd:qk]</rows>
+        <cols>[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]</cols>
+      </table>
+      <simple-id uuid='{9471497E-4813-40BC-949D-1F61D07C0EC6}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontsize='26'>SALARY DASHBOARD</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='860' maxwidth='1560' minheight='860' minwidth='1560' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98140' id='17' param='horz' type-v2='layout-flow' w='98974' x='513' y='930'>
+            <zone h='98140' id='12' param='vert' type-v2='layout-flow' w='98974' x='513' y='930'>
+              <zone h='9186' id='14' type-v2='title' w='98974' x='513' y='930'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='dashed' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='4' />
+                  <format attr='background-color' value='#f9e9e0' />
+                </zone-style>
+              </zone>
+              <zone h='88954' id='9' param='vert' type-v2='layout-flow' w='98974' x='513' y='10116'>
+                <zone h='88954' id='7' type-v2='layout-basic' w='98974' x='513' y='10116'>
+                  <zone h='88954' id='10' type-v2='layout-basic' w='98974' x='513' y='10116'>
+                    <zone h='88954' id='13' type-v2='layout-basic' w='98974' x='513' y='10116'>
+                      <zone h='48605' id='15' name='Sal vs Exp and Title' w='54400' x='23847' y='10116'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='40349' id='20' name='Sal vs Remote' w='27756' x='513' y='58721'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='40349' id='22' name='Sal Vs Emp type' w='37841' x='28269' y='58721'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='48605' id='24' name='Sal Vs Company size' w='21240' x='78247' y='10116'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='40349' id='26' name='Sal comp with years' w='33377' x='66110' y='58721'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='48605' id='28' name='Sal Vs Exp' w='23334' x='513' y='10116'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontsize='26'>SALARY PREDICTOR</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1800' minheight='1800' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98140' id='33' param='vert' type-v2='layout-flow' w='98974' x='513' y='930'>
+                <zone h='9186' id='14' type-v2='title' w='98974' x='513' y='930'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='dashed' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f9e9e0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48605' id='28' is-fixed='true' name='Sal Vs Exp' w='23334' x='513' y='10116'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48605' id='15' is-fixed='true' name='Sal vs Exp and Title' w='54400' x='23847' y='10116'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48605' id='24' is-fixed='true' name='Sal Vs Company size' w='21240' x='78247' y='10116'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40349' id='20' is-fixed='true' name='Sal vs Remote' w='27756' x='513' y='58721'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40349' id='22' is-fixed='true' name='Sal Vs Emp type' w='37841' x='28269' y='58721'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='40349' id='26' is-fixed='true' name='Sal comp with years' w='33377' x='66110' y='58721'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9581C9C0-A779-4588-BE82-A187B755EECD}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='44'>
+    <window class='worksheet' name='Sal Vs Exp'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{13D928F2-7658-4978-BD7A-506CD18C5764}' />
+    </window>
+    <window class='worksheet' name='Sal vs Exp and Title'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='checkdropdown' param='[federated.1catnuv10fksi9164vvyx025sbcj].[usr:Calculation_2112188291528364032:ok:6]' show-morefewerbutton='false' type='filter' />
+            <card pane-specification-id='1' param='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Experience Level:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{902F090D-60EA-49E1-A0A4-893D5324A003}' />
+    </window>
+    <window class='worksheet' name='Sal vs Remote'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1catnuv10fksi9164vvyx025sbcj].[none:remote_ratio:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{95C772E2-FC65-4CEF-B95B-1A32FF852FA2}' />
+    </window>
+    <window class='worksheet' name='Sal Vs Emp type'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Employment Type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B711C603-BFD7-4B0C-8A24-C1467B75A162}' />
+    </window>
+    <window class='worksheet' name='Sal Vs Company size'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Company Size:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{43D1F68A-282F-4AE4-94D0-459C8B222EAE}' />
+    </window>
+    <window class='worksheet' name='Sal comp with years'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1catnuv10fksi9164vvyx025sbcj].[none:Year:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{28F51D74-DF37-4937-873B-53555FB3B871}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sal Vs Company size'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sal Vs Emp type' />
+        <viewpoint name='Sal Vs Exp'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sal comp with years'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sal vs Exp and Title'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sal vs Remote'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='22' />
+      <simple-id uuid='{4A7BA2AF-D696-4525-8590-A309D51D2C02}' />
+    </window>
+  </windows>
+</workbook>
