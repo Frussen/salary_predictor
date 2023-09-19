@@ -26,8 +26,8 @@
       <div class="flex-item">
         <label for="job_title">Choose Job Title:</label>
         <select name="job_title" id="job_title">
-          <option value="void" selected="selected"></option>
-          <option value="de">Data Engineer</option>
+          <option value="void"></option>
+          <option value="de" selected="selected">Data Engineer</option>
           <option value="ds">Data Scientist</option>
           <option value="da">Data Analyst</option>
           <option value="ml">Machine Learning Engineer</option>
@@ -41,14 +41,14 @@
           <option value="void"></option>
           <option value="ent">Entry</option>
           <option value="mid">Mid</option>
-          <option value="sen">Senior</option>
+          <option value="sen" selected="selected">Senior</option>
           <option value="exe">Executive</option>
         </select>
 
         <label for="emp_type"> Employment Type:</label>
         <select name="emp_type" id="emp_type">
-          <option value="void" selected="selected"></option>
-          <option value="full">Full-Time</option>
+          <option value="void"></option>
+          <option value="full" selected="selected">Full-Time</option>
           <option value="part">Part-Time</option>
           <option value="cont">Contract</option>
           <option value="free">Freelance</option>
@@ -58,20 +58,20 @@
       <div class="flex-item">
         <label for="cmp_size"> Company Size:</label>
         <select name="cmp_size" id="cmp_size">
-          <option value="void" selected="selected"></option>
+          <option value="void"></option>
           <option value="s">Small</option>
-          <option value="m">Medium</option>
+          <option value="m" selected="selected">Medium</option>
           <option value="l">Large</option>
         </select>
 
         <label for="year"> Year:</label>
         <select name="year" id="year">
-          <option value="void" selected="selected"></option>
+          <option value="void"></option>
           <option value="seven">2027</option>
           <option value="six">2026</option>
           <option value="five">2025</option>
           <option value="four">2024</option>
-          <option value="three">2023</option>
+          <option value="three" selected="selected">2023</option>
           <option value="two">2022</option>
           <option value="one">2021</option>
           <option value="zero">2020</option>
@@ -226,21 +226,52 @@
         job_title_rc
       ]
 
-      const means = [2.02251346e+03, 2.63561077e+00, 2.07298137e+00, 5.69358178e-02,
-       1.85817805e-01, 3.36438923e-02, 2.89855072e-01, 2.60869565e-01,
-       1.28881988e-01, 4.39958592e-02]
+      means = [
+        2022.5134575569359185465,
+        2.6356107660455485586,
+        2.0729813664596274947,
+        0.0569358178053830238,
+        0.1858178053830227827,
+        0.0336438923395445122,
+        0.2898550724637681264,
+        0.2608695652173912971,
+        0.1288819875776397450,
+        0.0439958592132505197
+      ]
 
-      const scales = [0.68352776, 0.68232263, 0.36451677, 0.23171994, 0.38895957,
-       0.18031079, 0.45369495, 0.43910891, 0.33506928, 0.20508589]
+      scales = [
+        0.6835277598672531151891007539234124124,
+        0.6823226300499605212479536930914036930,
+        0.3645167731581919201566677202208666131,
+        0.2317199397035465402439058379968628287,
+        0.3889595719167479037636780958564486355,
+        0.1803107896044761071507878114061895758,
+        0.4536949519564790755943306521658087149,
+        0.4391089103635686385906922168942401186,
+        0.3350692776959369179046177578129572794,
+        0.2050858931895081782581513607510714792
+      ]
 
-      const coeff = [1.03244753e+04, 2.55381505e+04, 9.05065279e+02, 6.38208730e+16,
-       1.07128197e+17, 4.96616390e+16, 1.24957774e+17, 1.20940451e+17,
-       9.22856006e+16, 5.64852587e+16]
+      coeff = [
+      10286.964222997881734045222401618958,
+      25628.504311907374358270317316055298,
+      864.465461907285543929901905357838,
+      364045008418687552.0000,
+      611077280678194432.0000,
+      283278353185836704.0000,
+      712780189809377920.0000,
+      689864701218801280.0000,
+      526412609012928512.0000,
+      322201429053742208.0000
+      ]
       
-      var prediction = 140947.92206393884;
+      var prediction = 140957.25209385675;
       for(i=0; i<values.length; i++) {
         prediction += (coeff[i] * ((values[i]-means[i])/scales[i]))
-        console.log((((values[i]-means[i])/scales[i])))
+        console.log("-------------------")
+        console.log((values[i]-means[i])/scales[i])
+        console.log(coeff[i])
+        console.log(prediction)
       }
 
       if(error === '') {
